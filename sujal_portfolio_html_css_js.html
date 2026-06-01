@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sujal Mehra Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: white;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 60px;
+    }
+
+    h2 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    p {
+      color: #cbd5e1;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: center;
+      gap: 50px;
+      min-height: 100vh;
+    }
+
+    .hero-text span {
+      color: #38bdf8;
+      font-size: 20px;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .primary-btn {
+      background: #0ea5e9;
+    }
+
+    .primary-btn:hover {
+      background: #0284c7;
+    }
+
+    .secondary-btn {
+      border: 1px solid #475569;
+    }
+
+    .secondary-btn:hover {
+      border-color: #38bdf8;
+    }
+
+    .profile-box {
+      width: 320px;
+      height: 320px;
+      background: linear-gradient(135deg, #0ea5e9, #4f46e5);
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      font-weight: bold;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      padding: 30px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background: #1e293b;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .contact-links a {
+      background: #1e293b;
+      padding: 15px 25px;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .contact-links a:hover {
+      background: #334155;
+    }
+
+    footer {
+      border-top: 1px solid #1e293b;
+      padding: 30px;
+      text-align: center;
+      color: #94a3b8;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(2, 6, 23, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 24px;
+      color: #38bdf8;
+      margin: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-subtitle {
+      color: #94a3b8;
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      margin-top: -25px;
+      margin-bottom: 40px;
+    }
+
+    .experience-date {
+      color: #38bdf8;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .project-title {
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      margin-bottom: 10px;
+    }
+
+    @media(max-width:768px){
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+
+    @media(max-width:768px){
+      h1 {
+        font-size: 42px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <h2 class="logo">Sujal Mehra</h2>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <span>Hello, I'm</span>
+        <h1>Sujal Mehra</h1>
+
+        <p>
+          Computer Science & Engineering (AI & ML) undergraduate passionate about
+          Machine Learning, Deep Learning, Data Science, Web Development,
+          Artificial Intelligence, and intelligent systems. Experienced in
+          AI-driven projects, predictive analytics, startup ecosystem support,
+          research-oriented development, and full-stack applications.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn primary-btn">Contact Me</a>
+          <a href="#projects" class="btn secondary-btn">View Projects</a>
+        </div>
+      </div>
+
+      <div class="profile-box">
+        SM
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        Passionate AI & ML undergraduate focused on intelligent systems,
+        full-stack development, predictive analytics, and research-oriented
+        software solutions.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <p>
+            I am a Computer Science & Engineering student specializing in
+            Artificial Intelligence and Machine Learning with strong interests
+            in AI systems, deep learning, computer vision, NLP, research,
+            predictive analytics, and full-stack development. I have worked on
+            projects involving intrusion detection systems, AI-powered career
+            guidance platforms, face recognition systems, and intelligent
+            prediction models. Alongside technical development, I also gained
+            professional experience through internship work at IIT Mandi
+            Catalyst involving startup ecosystem operations, incubation support,
+            webpage development, reporting, and operational management.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="skills">
+            <div class="skill">Machine Learning</div>
+            <div class="skill">Deep Learning</div>
+            <div class="skill">Python</div>
+            <div class="skill">TensorFlow</div>
+            <div class="skill">PyTorch</div>
+            <div class="skill">Web Development</div>
+            <div class="skill">Computer Vision</div>
+            <div class="skill">Data Science</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-subtitle">
+        Professional internships, research experience, and technical training.
+      </p>
+
+      <div class="timeline">
+
+        <div class="card">
+          <h3>Python for Data Science Trainee – NEWUS Institute</h3>
+          <p class="experience-date">Jun 2024 – Jul 2024</p>
+          <br>
+          <p>
+            Learned Python fundamentals focused on Data Science, analytics,
+            visualization, SQL, machine learning workflows, and data
+            preprocessing. Worked with Pandas, NumPy, Matplotlib, and practical
+            analytical applications using real-world datasets.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Research Intern – NIT Hamirpur</h3>
+          <p class="experience-date">Jun 2025 – Jul 2025</p>
+          <br>
+          <p>
+            Developed Intrusion Detection System (IDS) using CNN, BiLSTM, and
+            Attention mechanisms for IoT security applications. Processed the
+            CICIoT2023 dataset containing over 22 million network traffic
+            records and achieved 98% classification accuracy for anomaly
+            detection.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Internship – IIT Mandi Catalyst</h3>
+          <p class="experience-date">Jan 2026 – May 2026</p>
+          <br>
+          <p>
+            Worked on startup-related data analysis, incubation reporting,
+            webpage development, website UI structuring, startup tracking,
+            documentation, operational management, and incubation support
+            activities. Also contributed to website updates, content
+            structuring, reporting, presentations, and event coordination for
+            startup ecosystem operations.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">
+        AI, Machine Learning, Web Development, and intelligent application projects.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Intrusion Detection System using CNN-BiLSTM-Attention</h3>
+          <p>
+            Developed hybrid deep learning IDS for IoT security using CNN,
+            BiLSTM, and Attention mechanisms with 98%+ accuracy on CICIoT2023
+            dataset containing 22M+ records.
+          </p>
+          <div class="skills">
+            <div class="skill">TensorFlow</div>
+            <div class="skill">Python</div>
+            <div class="skill">Keras</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Spark – Skill Assessment & Roadmap for Knowledge</h3>
+          <p>
+            Built AI-powered career guidance platform with ATS resume analysis,
+            AI quizzes, personalized career roadmaps, and AI integrations using
+            Groq LLaMA-3.1 and Gemini APIs.
+          </p>
+          <div class="skills">
+            <div class="skill">Flask</div>
+            <div class="skill">API</div>
+            <div class="skill">JavaScript</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>GRIHAM – Smart Housing & Property Platform</h3>
+          <p>
+            Developed a housing and property-focused platform designed to
+            simplify property discovery, management, and user interaction
+            through responsive UI design and structured web workflows.
+          </p>
+          <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Attendance System with Face Recognition</h3>
+          <p>
+            Created real-time face recognition attendance system using OpenCV,
+            Python, webcam integration, and SQL database connectivity for
+            automated attendance tracking.
+          </p>
+          <div class="skills">
+            <div class="skill">OpenCV</div>
+            <div class="skill">Python</div>
+            <div class="skill">SQL</div>
+          </div>
+        </div>
+
+              <div class="card">
+          <h3>Titanic Survival Prediction</h3>
+          <p>
+            Developed machine learning prediction model with feature
+            engineering, Streamlit deployment, and SHAP explainability for
+            predictive analytics and model interpretation.
+          </p>
+          <div class="skills">
+            <div class="skill">Scikit-learn</div>
+            <div class="skill">Streamlit</div>
+            <div class="skill">SHAP</div>
+            <div class="skill">Machine Learning</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Technical Skills</h2>
+      <p class="section-subtitle">
+        Technical stack, frameworks, programming languages, and AI/ML tools.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Languages</h3>
+          <div class="skills">
+            <div class="skill">Python</div>
+            <div class="skill">C++</div>
+            <div class="skill">R</div>
+            <div class="skill">SQL</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>AI / ML</h3>
+          <div class="skills">
+            <div class="skill">TensorFlow</div>
+            <div class="skill">PyTorch</div>
+            <div class="skill">Keras</div>
+            <div class="skill">Scikit-learn</div>
+            <div class="skill">Pandas</div>
+            <div class="skill">NumPy</div>
+            <div class="skill">Matplotlib</div>
+            <div class="skill">OpenCV</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Tools & Frameworks</h3>
+          <div class="skills">
+            <div class="skill">Flask</div>
+            <div class="skill">Streamlit</div>
+            <div class="skill">Google Colab</div>
+            <div class="skill">Jupyter</div>
+            <div class="skill">XAMPP</div>
+            <div class="skill">SHAP</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-subtitle">
+        Certifications and technical learning achievements.
+      </p>
+
+      <div class="cards">
+        <div class="card">Deep Learning for NLP – NPTEL (2025)</div>
+        <div class="card">Data Science for Engineers – NPTEL (2024)</div>
+        <div class="card">Python for Data Science – NEWUS Institute (2024)</div>
+        <div class="card">Spoken Tutorial Python – IIT Bombay (2023)</div>
+        <div class="card">Web Development – JNGEC (2023)</div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <p class="section-subtitle">
+        Academic background and specialization.
+      </p>
+
+      <div class="card">
+        <h3>Bachelor of Technology (B.Tech)</h3>
+        <p>Computer Science & Engineering (AI & ML)</p>
+        <br>
+        <p>
+          Jawaharlal Nehru Government Engineering College, Sundernagar
+        </p>
+        <p>CGPA: 7.27 | 2022 – 2026</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Connect With Me</h2>
+      <p class="section-subtitle">
+        Open to internships, Web Developments roles, AI/ML opportunities, research collaborations,
+        and software development roles.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:sujalmehra82194@gmail.com">Email</a>
+
+        <a href="https://www.linkedin.com/in/sujal-mehra--/" target="_blank">
+          LinkedIn
+        </a>
+
+        <a href="https://github.com/Sujal-Core" target="_blank">
+          GitHub
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 Sujal . All rights reserved.
+  </footer>
+
+  <script>
+    console.log('Portfolio Website Loaded Successfully');
+  </script>
+
+</body>
+</html>
